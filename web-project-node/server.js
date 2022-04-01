@@ -2,13 +2,14 @@ const express = require('express')
 const app = express()
 const cors = require("cors");
 app.use(express.json())
+app.use(cors())
 
 const url = "mongodb+srv://Reddy:1234@cluster0.56tv7.mongodb.net/sample_guides?retryWrites=true&w=majority";
 const mongoose = require('mongoose')
-const listingsAndReviews = require('./model/listingsAndReviews');
-const User = require('./model/User');
+// const User = require('./model/User');
 const planets = require('./model/planets');
-const { ServerApiVersion } = require('mongodb');
+
+app.use(express.static(__dirname + "/web-project/build"));
 
 mongoose.connect(url, {
     useNewUrlParser: true, 
@@ -40,4 +41,10 @@ console.log("Hello World");
 // }
 
 // myServer.listen(process.env.PORT || 3000);
-app.listen(7000);
+
+
+app.get("/*", async (req, res) => {
+    res.sendFile(process.cwd() + "");
+})
+
+app.listen(3000);
