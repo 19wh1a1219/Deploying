@@ -7,7 +7,7 @@ const App = () => {
   let [data, setData] = useState([]);
 
   React.useEffect(() => {
-    axios.get("http://localhost:3000/api/data").then((result) => {
+    axios.get("/api/data").then((result) => {
       // this.state.data = result.data.data;
       setData(
         result.data.data
