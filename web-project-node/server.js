@@ -9,6 +9,8 @@ const mongoose = require('mongoose')
 // const User = require('./model/User');
 const planets = require('./model/planets');
 
+const port = process.env.PORT || 3000;
+
 app.use(express.static(__dirname + "/web-project/build"));
 
 mongoose.connect(url, {
@@ -47,4 +49,4 @@ app.get("/*", async (req, res) => {
     res.sendFile(process.cwd() + "");
 })
 
-app.listen(3000);
+app.listen(port);
