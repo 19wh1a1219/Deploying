@@ -39,4 +39,5 @@ console.log("Hello World");
 //     appendFile.use(express.static("web-project/build"));
 // }
 
-myServer.listen(process.env.PORT || 3000);
+// myServer.listen(process.env.PORT || 3000);
+app.listen(7000);
