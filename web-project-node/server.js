@@ -35,8 +35,8 @@ setTimeout(async () => {
 
 console.log("Hello World");
 
-if(process.end.NODE_ENV == "production") {
-    appendFile.use(express.static("web-project/build"));
-}
+// if(process.end.NODE_ENV == "production") {
+//     appendFile.use(express.static("web-project/build"));
+// }
 
 myServer.listen(process.env.PORT || 3000);
