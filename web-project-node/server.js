@@ -34,6 +34,7 @@ app.get("/api/data", (req, res) => {
 setTimeout(async () => {
     data = await planets.find();
     console.log(data);
+    // console.log(process.env.pwd);
 }, 5000);
 
 console.log("Hello World");
