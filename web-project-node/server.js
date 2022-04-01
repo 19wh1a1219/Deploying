@@ -46,7 +46,7 @@ console.log("Hello World");
 
 
 app.get("/*", async (req, res) => {
-    res.sendFile(process.cwd() + "");
+    res.sendFile(process.cwd() + "/web-project/build/index.html");
 })
 
 app.listen(port);

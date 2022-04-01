@@ -1,18 +1,21 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import Table from 'react-bootstrap/Table'
+// import { count } from '../../model/planets';
 
 const App = () => {
 
   let [data, setData] = useState([]);
 
   React.useEffect(() => {
-    axios.get("/api/data").then((result) => {
+    // axios.get("/api/data").then((result) => {
+      axios.get("http://localhost:3000/api/data").then((result) => {
       // this.state.data = result.data.data;
       setData(
         result.data.data
       )
       console.log(result.data.data);
+      console.log()
        
     }, (error) => {
       console.log("error");
@@ -42,9 +45,9 @@ const App = () => {
                  <tr key={index}>
                   <td>{ element.name }</td>
                   <td>{ element.orderFromSun }</td>
-                  <td>{ element.hasRings }</td>
+                  <td>{ element.hasRings.toString() }</td>
                   <td>{ element.mainAtmosphere }</td>
-                  <td>{ element.surfaceTemperature }</td>
+                  <td>{ element.surfaceTemperatureC.mean }</td>
                 </tr>
               )
               })} 
